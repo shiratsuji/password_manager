@@ -11,7 +11,7 @@ while true ; do
 		read service_name
 
 		if grep -q "^$service_name:" passwords.md ; then
-			echo "そのサービスは登録済みです。"
+			echo "そのサービスは登録済みです"
 
 		else    echo "ユーザー名を入力してください："
 		        read user_name
