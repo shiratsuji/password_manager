@@ -10,5 +10,5 @@ read password
 
 echo $service_name:$user_name:$password >> passwords.md
 
-echo "Thank you"
+echo "Thank you!"
 
