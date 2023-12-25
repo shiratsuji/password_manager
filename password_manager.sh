@@ -9,13 +9,18 @@ while true ; do
 	if [ "$action" = "Add Password" ] ; then
 		echo "サービス名を入力してください："
 		read service_name
-		echo "ユーザー名を入力してください："
-		read user_name
-		echo "パスワードを入力してください："
-		read password
 
-		echo "$service_name:$user_name:$password" >> passwords.md
-		echo "パスワードの追加は成功しました。"
+		if grep -q "^$service_name:" passwords.md ; then
+			echo "そのサービスは登録済みです"
+
+		else    echo "ユーザー名を入力してください："
+		        read user_name
+		        echo "パスワードを入力してください："
+		        read password
+
+		        echo "$service_name:$user_name:$password" >> passwords.md
+		        echo "パスワードの追加は成功しました。"
+                fi
 
 	elif [ "$action" = "Get Password" ] ; then
 		echo "サービス名を入力してください："
